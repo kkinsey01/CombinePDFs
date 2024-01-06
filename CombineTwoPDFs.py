@@ -1,7 +1,6 @@
 from pypdf import PdfMerger
 import PySimpleGUI as sg
 from datetime import datetime
-import os.path
 
 def combine_PDFs(file1, file2, output_file_name):
     if not file1 or not file2:
@@ -43,10 +42,7 @@ layout_column = [
     ]
 ]
 
-file1_name = ""
-file2_name = ""
-
-file_location = ""
+file1_name, file2_name, file_location = ""
 window = sg.Window("Combine PDFs", layout_column, size=(800, 250))
 
 while True:
@@ -67,7 +63,4 @@ while True:
             window["-ERROR-"].update(visible=False)
             combine_PDFs(file1_name, file2_name, file_location)
 
-    #print(event, values)
-
 window.close()
-
