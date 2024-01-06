@@ -32,7 +32,7 @@ layout_column = [
         sg.FileBrowse(file_types=((('PDFs', '*.pdf'),))),
     ],
     [
-        sg.Text("Store location: ", expand_x=True),
+        sg.Text("Folder location: ", expand_x=True),
         sg.In(size=(25, 1), enable_events=True, key="-LOCATION-", expand_x=True),
         sg.FolderBrowse()
     ],
@@ -42,7 +42,7 @@ layout_column = [
     ]
 ]
 
-file1_name, file2_name, file_location = ""
+file1_name, file2_name, file_location = "", "", ""
 window = sg.Window("Combine PDFs", layout_column, size=(800, 250))
 
 while True:
